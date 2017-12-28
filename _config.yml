@@ -7,7 +7,7 @@ title: XieZhichao'pages
 subtitle: 技术、生活笔记
 description: 一个全栈开发的个人笔记
 author: XieZhichao
-language:
+language: zh-CN
 timezone:
 
 # URL
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jane
+theme: cafe
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
