@@ -1,7 +1,10 @@
 ---
 title: Java多线程下写同一个变量
 date: 2018-01-25 16:33:53
-tags: Java 多线程
+tags:
+  - Java
+  - 多线程
+categories: Java
 ---
 ## 场景
 为了提高程序并发效率，多线程是必不可少的方案。

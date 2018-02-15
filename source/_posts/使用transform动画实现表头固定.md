@@ -2,6 +2,9 @@
 title: 使用transform动画实现表头固定
 date: 2018-01-05 13:15:07
 tags:
+  - CSS
+  - transform
+categories: CSS
 ---
 
 ## 需求场景
@@ -61,6 +64,6 @@ Web页面的Table数据表，同样会有类似的需求，目前解决方案有
         }, 100);
     });
   ```
-  这里有几点需要关注：
-    - transform兼容性，兼容chrome，firefox比较简单，带前缀。ie给<thead>设置动画时无效，必须需要给<th>设置
-    - firefox，ie会有闪烁，可以设置一个时延
+这里有几点需要关注：
+- transform兼容性，兼容chrome，firefox比较简单，带前缀。ie给<thead>设置动画时无效，必须需要给<th>设置
+- firefox，ie会有闪烁，可以设置一个时延
