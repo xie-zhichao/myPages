@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: XieZhichao'pages
+title: 谢志超's Pages
 subtitle: 技术、生活笔记
-description: 一个全栈开发的个人笔记
-author: XieZhichao
+description: 一个Web全栈开发工程师的网络日志
+author: 谢志超
 language: zh-CN
 timezone:
 
@@ -80,4 +80,4 @@ deploy:
   type: git
   repo: git@github.com:xie-zhichao/xie-zhichao.github.io.git
   branch: master
-  message: 
+  message: update blog
