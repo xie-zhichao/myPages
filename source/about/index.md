@@ -11,11 +11,11 @@ comments: false
  
 ## 我的技术栈
 编程语言：Java, JavaScript, Html5, CSS3
-框架栈：Spring, SpringBoot, Dubbo, Hibernate/iBatis, Junit 
-        JQuery, RequireJs, Vue, Gulp, Webpack
-工具栈：IntelliJ IDEA, Eclipse, Maven, Git
+技 术 栈：Spring, SpringBoot, Dubbo, Hibernate/iBatis, Junit 
+        JQuery, RequireJs, Vue, Gulp, Webpack, NodeJS
+工 具 栈：IntelliJ IDEA, Eclipse, Maven, Git
         Webstorm, VS Code , Nodejs
-中间件：Mysql, Redis, Rocket MQ, Zookeeper, Task Scheduler
+中 间 件：Mysql, Redis, Rocket MQ, Zookeeper, Task Scheduler
 持续集成：Jenkins
 项目管理：有技术管理经验，熟悉scrum敏捷开发。 
 

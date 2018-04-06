@@ -18,6 +18,7 @@ CoffeeScript是一套JavaScript的转译语言，提供了许多借鉴于Ruby的
 JavaScript的语言标准，已经更新到ES6了，语法上有不少的改进，有些改进还是借鉴于CoffeeScript。为了兼容旧标准，Babel可以提供一个运行环境，让我们可以运行ES6标准的js代码。CoffeeScript最近也更了新版本到2.0版，添加了部分ES6的支持。
 ### Gulp
 Gulp是node环境下的一个流式构建工具，为JavaScript工程提供了工程化构建解决方案。
+
 ## CoffeeScript+Babel+Gulp组合的相关配置
 **package.json**
 ``` javascript
