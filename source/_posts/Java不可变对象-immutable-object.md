@@ -58,7 +58,7 @@ public final class ImmutableDemo {
 ## 优缺点
 * 优点，天生线程安全，因为无论在哪里修改它，都会产生新的对象
 > 这里说明一下，并不是说String就可以随便用于多线程共享，线程安全的只是当时那个String对象，你的String变量是个引用值，**当你改动时，这个引用值还是在变的，每改一次，都会指向一个新对象**。
-* 优点，用于HashMap的key，hashcode是稳定的
+* 优点，用于HashMap的key，hashcode是稳定的。**这里还有一个概念：字符串常量池，字符串在jvm运行环境内部有一个池子，String对象都是指向这个池子，相同的字符串指向相同的地址**。
 * 缺点，以String作例子，如果你频繁改动，会产生过多新对象，影响性能。可以考虑用StringBuilder(线程不安全)和StringBuffer(线程安全)
 
 # 上一篇文章的答案
