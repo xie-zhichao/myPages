@@ -3,7 +3,8 @@ title: TypeScript体验
 date: 2019-01-30 10:27:42
 tags:
  - TypeScript
-categories: JavaScript
+ - JavaScript
+categories: TypeScript
 ---
 ## 背景和简介
 TypeScript是javascript的一个超集，通过编译的形式，扩展了JavaScript的功能特性（类似于CoffeScript）。
