@@ -40,23 +40,23 @@ favicon: /favicon.png
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/random.css
-- http://libs.cdnjs.net/vegas/2.3.4/vegas.min.css
+- http://libs.cdnjs.net/vegas/2.2.0/vegas.min.css
 - http://libs.cdnjs.net/highlight.js/9.3.0/styles/railscasts.min.css
 - http://libs.cdnjs.net/fancybox/2.1.5/jquery.fancybox.min.css
 - /css/iconfont/iconfont.css
 - http://libs.cdnjs.net/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.css
-- http://libs.cdnjs.net/plyr/3.2.2/plyr.css
+- http://libs.cdnjs.net/plyr/2.0.1/plyr.css
 
 # scripts loaded in the end of the body
 scripts:
 - http://libs.cdnjs.net/jquery/2.2.3/jquery.js
-- http://libs.cdnjs.net/vegas/2.3.4/vegas.min.js
+- http://libs.cdnjs.net/vegas/2.2.0/vegas.min.js
 - /js/random.js
 - http://libs.cdnjs.net/highlight.js/9.3.0/highlight.min.js
 - http://libs.cdnjs.net/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js
 - http://libs.cdnjs.net/fancybox/2.1.5//jquery.fancybox.pack.js
 - http://libs.cdnjs.net/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js
-- http://libs.cdnjs.net/plyr/3.2.2/plyr.js
+- http://libs.cdnjs.net/plyr/2.0.1/plyr.js
 
 # ignore visitor statistics on special server, for example on you local computer or debugging server
 isIgnoreSpecialHostVisitor: true
