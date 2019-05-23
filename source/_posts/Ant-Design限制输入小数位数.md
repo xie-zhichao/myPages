@@ -1,5 +1,5 @@
 ---
-title: '# Ant Design限制输入小数位数'
+title: 'Ant Design限制输入小数位数'
 date: 2019-05-23 14:06:04
 tags:
   - JavaScript
@@ -7,8 +7,6 @@ tags:
   - Ant Design
 categories: JavaScript
 ---
-# Ant Design限制输入小数位数
-
 ## 背景和需求
 使用Ant Design组件的管理后台，有一个表单金额输入，使用InputNumber组件，需要限制输入的小数位数。比如，只能输入2位小数，不能多输。
 
