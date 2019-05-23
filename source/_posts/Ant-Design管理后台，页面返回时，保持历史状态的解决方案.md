@@ -23,12 +23,15 @@ categories: JavaScript
 对比，选择History state，基于一下考虑：
 - 写在Url里面更直观，更符合Web的Url和资源对的理念
 - 页面强制刷新时，也可以保持参数
+
+另外，设计时考虑到方便，每个列表的查询参数，用一个json对象存放，然后通过base64转码，放在url中保持。
  
 ## 示例
 - 首先，在渲染查询表单时，用Url里面的查询参数初始化表单的值
 ```javascript
 // 根据query参数，初始化表单值
-  const querying = Query.parse();
+  // 根据query参数，初始化表单值
+  const querying = Query.getQueryJson('finalBalanceParams');
   ...
   <FormItem label="商户ID">
       {getFieldDecorator('id', {
@@ -42,26 +45,26 @@ categories: JavaScript
     </FormItem>
 ```
 
-- 其次，search方法里面, 查询之前要先读取Url里面的查询参数，查询后，更新表单查询参数：
+- 其次，查询方法里面, 查询之前要先读取Url里面的查询参数，查询后，更新表单查询参数：
 ```javascript
-  // 读取url里面的查询参数
-  const querying = Query.parse();
-  const { pageNumber = 1, pageSize = 20 } = querying;
-  ...
-  // 更新url查询参数
-  Query.appendQuery(values);
+  // 读取和更新query参数
+  const querying = Query.getQueryJson('finalBalanceParams');
+  e && (querying.pageNumber = 1); // 按钮查询时重置为1
+  const finalBalanceParams = { ...{ pageNumber: 1, pageSize: 20 }, ...querying, ...trimObject(formValues) };
+  Query.appendQueryJson('finalBalanceParams', finalBalanceParams);
 ```
 
-- 最后，在分页列表渲染方法里面，更新分页参数
+- 最后，在翻页、排序等参数改变的响应里面，更新分页等参数
 ```javascript
-    // 给页面Url添加分页参数，保持分页状态
-    const { pageNumber, pageSize } = data;
-    pageNumber && Query.appendQuery({
-      pageNumber,
-      pageSize
-    });
+  // 更新query参数
+  const querying = Query.getQueryJson('finalBalanceParams');
+  const finalBalanceParams = { ...querying, ...params };
+  Query.appendQueryJson('finalBalanceParams', finalBalanceParams);
 ```
 
 ## 注意事项
 - 初始化表单时，有些控件的初始值需要转换，比如日期选择器
 - 页面上有多个分页列表时，参数名要区分一下
+- query里面，可以使用base64编码，存储json数据
+  
+> 05-22，修订，参数使用json格式，base64转码后设置到url参数
