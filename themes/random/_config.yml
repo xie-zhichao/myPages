@@ -6,6 +6,7 @@ language: en
 menu:
   首页: index.html
   归档: archives
+  专题: subject
   标签: tags
   分类: categories
   关于: about
