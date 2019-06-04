@@ -13,6 +13,7 @@ categories: 打卡
 - 【打卡第一周】[TypeScript学习1-TS出现的背景和简单介绍](/2019/05/07/TypeScript学习1-TS出现的背景和简单介绍/)
 - 【打卡第二周】[TypeScript学习2-数据类型](/2019/05/17/TypeScript学习2-数据类型/)
 - 【打卡第四周】[TypeScript学习难点-Interface-vs-Type-alias](/2019/05/30/TypeScript学习难点-Interface-vs-Type-alias/)
+- 【打卡第五周】[TypeScript学习3-接口](/2019/06/04/TypeScript学习3-接口/)
 
 ### Ant Design React技术记录
 - 【打卡第三周】[Ant-Design限制输入小数位数](/2019/05/23/Ant-Design限制输入小数位数/)
