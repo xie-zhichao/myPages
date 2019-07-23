@@ -16,6 +16,7 @@ categories: 打卡
 - 【打卡第五周】[TypeScript学习3-接口](/2019/06/04/TypeScript学习3-接口/)
 - 【打卡第八周】[TypeScript学习4-类](/2019/06/29/TypeScript学习4-类/)
 - 【打卡第九周】[TypeScript学习5-接口与类的应用](/2019/07/18/TypeScript学习5-接口与类的应用/)
+- 【打卡第十周】[TypeScript学习6-函数](/2019/07/23/TypeScript学习6-函数/)
 
 
 ### Ant Design React技术记录
