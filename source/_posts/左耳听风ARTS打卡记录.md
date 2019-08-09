@@ -23,6 +23,7 @@ categories: 打卡
 - 【打卡第三周】[Ant-Design限制输入小数位数](/2019/05/23/Ant-Design限制输入小数位数/)
 - 【打卡第六周】[Ant Design Pro-使用高阶组件实现父子菜单](/2019/06/16/Ant-Design-Pro-使用高阶组件实现父子菜单/)
 - 【打卡第十一周】[Ant Design Pro-实践React Hooks（一）](/2019/08/02/Ant-Design-Pro-实践React-Hooks（一）/)
+- 【打卡第十二周】[Ant Design Pro - 实践React Hooks - 组件](/2019/08/09/Ant-Design-Pro-实践React-Hooks-组件/)
 
 ### 基础技术-事件
 - 【打卡第七周】[移动端单击事件延迟的处理方法](/2019/06/24/移动端单击事件延迟的处理方法/)
