@@ -18,6 +18,7 @@ categories: 打卡
 - 【打卡第九周】[TypeScript学习5-接口与类的应用](/2019/07/18/TypeScript学习5-接口与类的应用/)
 - 【打卡第十周】[TypeScript学习6-函数](/2019/07/23/TypeScript学习6-函数/)
 - 【打卡第十三周】[TypeScript学习7-泛型](/2019/08/28/TypeScript学习7-泛型/)
+- 【打卡第十四周】[TypeScript学习8：高级类型-交叉类型、联合类型](/2019/10/11/TypeScript学习8：高级类型-交叉类型、联合类型/)
 
 ### Ant Design React技术记录
 - 【打卡第三周】[Ant-Design限制输入小数位数](/2019/05/23/Ant-Design限制输入小数位数/)

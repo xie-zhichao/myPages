@@ -87,23 +87,20 @@ interface CustomerInfo {
 ```
 > 这里说明一下，因为JavaScript对象中，数字索引是会转换成string来取值的。如果一个接口里面，同时有number、string索引属性时，number索引属性的类型，必须时string索引属性的子类型。**也就是，number索引的属性类型，必须能被string索引的属性类型覆盖；用number索引去取值，取到的值也是string索引属性的类型。**
 
-### 静态属性和只读属性
-- 静态类型，即类属性，static修饰
+### 只读属性
 - 只读属性，初始化后不能修改，readonly修饰
 ```typescript
 interface CustomerInfo {
-  static greeting = 'Hello'; // 静态属性
-  static readonly standardGreeting = 'Hello'; // 只读静态属性
-  readonly customerCode: string; // 只读属性
-  customerName: string; // 普通属性
+  greeting: string; // 普通属性
+  readonly standardGreeting: string; // 只读属性
+  customerCode: string;
+  customerName: string; 
 }
 ```
 > const vs readonly，变量用const，属性用readonly
 
 ### 函数类型
 接口除了能描述对象类型，还能描述函数类型（这个和面向对象语言有点不一样，需要理解一下）。
-```
-interface 
 ```typescript
 interface SearchFunc {
   (content: string, key: string): boolean;
