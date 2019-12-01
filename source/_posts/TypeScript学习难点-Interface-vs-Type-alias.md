@@ -14,15 +14,32 @@ categories: TypeScript
 ## 共同点
 - 都可以用于声明类型
 - 都可以被扩展（extends），被实现（implements）
+    > **此处说明一下，TS语言参考文档中说，类型别名不能被继承和实现，我经过测试，发现是可以的。**
+
+```typescript
+    type A = {
+      runner(time: number): void;
+    }
+    
+    interface B extends A {
+      name: string;
+    }
+    
+    class A1 implements A {
+      runner(time: number): void {
+        console.log(time);
+      }
+    }
+```
 
 ## 不同点
-- interface不能声明基础类型，联合类型，元组
+- interface不能声明字面类型，联合类型，元组
 - 联合运算符定义的别名类型，不能被class实现，不能被interface继承
  
-## 适应场景
-- 都能满足使用时，团队内保持一致即可
-- React Props/State，建议用type alias
-- 编写公共库，提供给第三方的API，要使用interface
+## 建议
+- 尽量使用interface
+- 联合类型、索引类型、映射类型、字面量类型等interface不能实现的，用type alias
+>关于第一条，也有技术博文，提出只要团队内一致就行。
 
 ## 参考
 1. [语言参考文档](https://www.tslang.cn/docs/home.html)

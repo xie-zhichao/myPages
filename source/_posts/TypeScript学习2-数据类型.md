@@ -30,7 +30,7 @@ let arr2: Array<string> = ['hello', 'world'];
 ```
 元组是一种特殊的数组
 ```javascript
-let arr1: ['string', 'number'] = ['hello', 123];
+let arr1: [string, number] = ['hello', 123];
 ```
 > 元组越界时，会以联合类型来处理，具体请查阅文档。
 
