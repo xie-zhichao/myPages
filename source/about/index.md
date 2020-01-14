@@ -20,5 +20,5 @@ Web全栈开发者，偏前端。
 ## 联系方式
 我的邮箱：hikeman09@gmail.com
 我的读书公众号：
-![Alt text](/weixin-qr.jpg)
+![读书三到](/weixin-qr.jpg)
 
