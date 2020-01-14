@@ -9,11 +9,11 @@ comments: false
 Web全栈开发者，偏前端。
  
 ## 技术栈
-- 语言：Java, JavaScript, TypeScript, Html5, CSS3, NodeJS
-- 前端技术栈：React, 微信小程序，Vue, Jquery, Koa2, Gulp, Webpack
-- 后端技术栈：Spring, SpringBoot, Dubbo, Hibernate/iBatis, Junit 
-- 工 具 栈：IntelliJ IDEA, Eclipse, Maven, Git, Webstorm, VS Code
-- 中 间 件：Mysql, Redis, Rocket MQ, Zookeeper, Task Scheduler
+- 语言：JavaScript, TypeScript, Html, CSS, Java
+- 前端技术栈：React, Node.JS, 微信小程序, Gulp, Webpack
+- 后端技术栈：Spring, Dubbo, Hibernate/iBatis, Junit 
+- 工 具 栈：npm, NodeJs, Maven, Git
+- 中 间 件：Mysql, Redis, Rocket MQ, Zookeeper
 - 持续集成：Jenkins
 - 项目管理：scrum敏捷开发 
 
