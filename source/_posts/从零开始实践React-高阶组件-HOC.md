@@ -124,58 +124,124 @@ const BookCommentsWithModle = WithModel(BookComments);
 看核心代码，重点地方会给出注释说明：
 
 ```javascript
-// 这里先定义一个图书Model Hooks函数，用于工厂创建Model Hooks
-const BookModelHooks = initialState => {
-  const [bookList, setBookList] = useState(initialState);
-  const [pending, setPending] = useState(false);
+import React, { useState, useEffect } from 'react';
 
-  const load = async params => {
-    setPending(true);
-    Ajax.get('data/books', params)
-      .then(res => setBookList(res))
-      .finally(() => setPending(false));
+export function useModelStore() {
+  const Ajax = (() => {
+    const books = [{ name: 'Book1', content: 'About book', author: 'Alex' }];
+
+    const getBooks = () => {
+      return new Promise(resolver => {
+        setTimeout(resolver(books), 200);
+      });
+    };
+
+    const addBook = () => {
+      return new Promise(resolver => {
+        const No = Math.round(Math.random() * 1000);
+        books.push({ name: `Book${No}`, content: `About book${No}`, author: 'Alex' });
+        setTimeout(resolver(200), 200);
+      });
+    };
+
+    return {
+      get: getBooks,
+      post: addBook,
+    };
+  })();
+
+  // 这里先定义一个图书Model Hooks函数，用于工厂创建Model Hooks
+  const BookModelHooks = initialState => {
+    const [bookList, setBookList] = useState(initialState);
+    const [pending, setPending] = useState(false);
+
+    const load = async params => {
+      setPending(true);
+      Ajax.get('data/books', params)
+        .then(res => setBookList(res))
+        .finally(() => setPending(false));
+    };
+
+    const addBook = async params => {
+      Ajax.post('data/books/add', params).then(() => load());
+    };
+
+    // 返回Model相关的state和state操作
+    return [bookList, { pending, load, addBook }];
   };
 
-  const addBook = async params => {
-    Ajax.post('data/books/add', params);
+  // 顶层状态仓库
+  const ModelStore = () => {
+    let $store = {};
+
+    const createStore = (modelName, ModelHooks, initialState) => {
+      $store = Object.assign({}, $store, { [modelName]: ModelHooks(initialState) });
+    };
+
+    const getStore = modelName => $store[modelName];
+
+    return { createStore, getStore };
   };
 
-  // 返回Model相关的state和state操作
-  return [bookList, { pending, load, addBook }];
-};
+  const modelStore = ModelStore();
+  modelStore.createStore('bookModel', BookModelHooks, []);
 
-// 顶层状态仓库
-const ModelStore = () => {
-  const $store = {};
+  return modelStore;
+}
 
-  const createStore = (modelName, ModelHooks, initialState) => {
-    Object.assign({}, $store, {[modelName]: ModelHooks(initialState)});
-  }
-
-  const getStore = modelName => $store[modelName];
-
-  return { createStore, getStore };
-};
-
-const modelStore = ModelStore();
-modelStore.createStore('bookModel', BookModelHooks, []);
-
-// 这里就是高阶组件工厂，传入Model Hooks函数和初始的state，工厂会生产出一个已经注入图书Model的高阶组件
-const WithModelFactory = (modelName) => {
-  // 这里的Model，我们可以设计一个全局管理器
-  const modelHooks = modelStore.getStore(modelName);
-  
+// 这里就是高阶组件工厂，工厂会生产出一个可以注入图书Model的高阶组件
+const WithModelFactory = modelName => {
   // 返回高阶组件
   return WrappedComponent => {
-    const WrappedComponentWithModel = props => (
-      <WrappedComponent {...props} model={modelHooks} />
-    );
+    const WrappedComponentWithModel = props => {
+      const { modelStore, ...passThroughProps } = props;
+
+      return <WrappedComponent {...passThroughProps} model={modelStore.getStore(modelName)} />;
+    };
 
     return WrappedComponentWithModel;
   };
 };
 
-const BookListWithModle = WithModelFactory('bookModel')(BookList);
+const BookList = props => {
+  const { model } = props;
+  const [bookList, { load, addBook }] = model || [];
+
+  useEffect(() => {
+    load && load();
+  }, []);
+
+  return (
+    <>
+      <ul>
+        {(bookList || []).map(book => (
+          <li>
+            {book.name}({book.author})
+          </li>
+        ))}
+      </ul>
+      <button type="button" onClick={addBook}>Add+</button>
+    </>
+  );
+};
+
+const BookComments = props => {
+  const { model } = props;
+  const [bookList] = model || [];
+
+  return (
+    <ul>
+      {(bookList || []).map(comment => (
+        <li>
+          {comment.content} from {comment.author}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export const BookListWithModel = WithModelFactory('bookModel')(BookList);
+export const BookCommentsWithModel = WithModelFactory('bookModel')(BookComments);
 ```
 
 看上去是不是有点像`Redux`，它确实用了相似的设计：`全局状态`，`状态注入`。
